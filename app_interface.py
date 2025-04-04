@@ -1,20 +1,13 @@
 import tkinter as tk
 from tkinter import filedialog
 from pathlib import Path
+from PDFFile import PDFFile
 
-class PDF:
-    def __init__(self, pdf_name, pdf_path):
-        self.pdf_name = pdf_name
-        self.pdf_path = pdf_path
-
-    def __str__(self):
-        return f"{self.pdf_name}"
-
-
-def pin(AES_key_pin, pin_entry, root):
+def pin(pin_entry, root):
     AES_key_pin = pin_entry.get() # Przekazujemy wprowadzone dane
     print(AES_key_pin)
     root.destroy() # zamknięcie okna
+
 
 def choose_pdf(info, pdf_file):
     file = filedialog.askopenfilename(
@@ -22,8 +15,8 @@ def choose_pdf(info, pdf_file):
         filetypes=(("Pliki PDF", "*.pdf"), ("Wszystkie pliki", "*.*"))
     )
     if file:
-        pdf_file.pdf_path = file # ścieżka do pliku
-        pdf_file.pdf_name = Path(file).name # nazwa do pliku
+        pdf_file.pdf_path = file
+        pdf_file.pdf_name = Path(file).name
         info.set(pdf_file.pdf_name)
 
 def signature_pdf(AES_key_pin):
@@ -55,7 +48,7 @@ def create_window():
     # deklaracja zmiennych
     info = tk.StringVar()
     info.set("No file chosen")
-    pdf_file = PDF(None, None)
+    pdf_file = PDFFile(None, None)
     AES_key_pin = 0
     info = tk.StringVar()
     info.set("No file chosen")

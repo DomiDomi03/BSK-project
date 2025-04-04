@@ -14,7 +14,7 @@ def encrypt_aes(pin, private_key):
     encryptor = cipher.encryptor()
     padded_key = private_key.ljust(len(private_key) + (16 - len(private_key) % 16), b' ')
     encrypted_private_key = encryptor.update(padded_key) + encryptor.finalize()
-    return iv, key, encrypted_private_key
+    return iv, encrypted_private_key
 
 # odszyfrowanie klucza RSA AES'em
 def decrypt_aes(decrypt_key, iv, pin):
