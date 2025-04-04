@@ -3,11 +3,10 @@ from tkinter import filedialog
 from pathlib import Path
 from PDFFile import PDFFile
 
-def pin(pin_entry, root):
+def pin(AES_key_pin, pin_entry, root):
     AES_key_pin = pin_entry.get() # Przekazujemy wprowadzone dane
     print(AES_key_pin)
     root.destroy() # zamknięcie okna
-
 
 def choose_pdf(info, pdf_file):
     file = filedialog.askopenfilename(
@@ -50,8 +49,7 @@ def create_window():
     info.set("No file chosen")
     pdf_file = PDFFile(None, None)
     AES_key_pin = 0
-    info = tk.StringVar()
-    info.set("No file chosen")
+
 
     root.update()
 
