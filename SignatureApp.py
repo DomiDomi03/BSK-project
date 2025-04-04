@@ -7,18 +7,19 @@ class SignatureApp(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
         self.file = PDFFile(None, None)
         self.AES_key_pin = 0
-
+        self.file_state_info = tk.StringVar()
+        self.file_state_info.set("No file chosen")
         # Początek programu
         self.create_main_window()
 
-    def choose_pdf(self, info):
+    def choose_pdf(self):
         chosen_file = filedialog.askopenfilename(
             title="Choose PDF file",
             filetypes=(("PDF files", "*.pdf"), ("All files", "*.*"))
         )
         if chosen_file is not None:
             self.file.setFile(chosen_file)
-            info.set(self.file.getName())
+            self.file_state_info.set(self.file.getName())
 
     def pin(self, pin_entry, root):
         self.AES_key_pin = pin_entry.get()  # Przekazujemy wprowadzone dane
@@ -44,19 +45,11 @@ class SignatureApp(tk.Tk):
 
         root.mainloop()
 
-    def create_main_window(self):
-        root = self
-        root.title("BSK project")
-        root.geometry("300x300")
-        root.configure(bg="#bcbfdc")
-
-        info = tk.StringVar()
-        info.set("No file chosen")
-
+    def create_buttons(self, root):
         button_choose_pdf = tk.Button(
             root,
             text="Choose pdf file",
-            command=lambda: self.choose_pdf(info),
+            command=lambda: self.choose_pdf(),
             fg="black",
             bg="white",
             relief="flat"
@@ -83,7 +76,15 @@ class SignatureApp(tk.Tk):
         )
         button_verify.pack(pady=(10, 0))
 
-        label = tk.Label(root, textvariable=info, bg="#bcbfdc", fg="black")
+    def create_main_window(self):
+        root = self
+        root.title("BSK project")
+        root.geometry("300x300")
+        root.configure(bg="#bcbfdc")
+
+        self.create_buttons(root)
+
+        label = tk.Label(root, textvariable=self.file_state_info, bg="#bcbfdc", fg="black")
         label.pack(pady=(20, 0))
 
 

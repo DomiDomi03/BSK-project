@@ -2,7 +2,7 @@
 The main goal of the project is to realize a software tool for emulating the qualified electronic signature, i.e. signing *.pdf documents. It is important to fully emulate the process, including the hardware toll needed for person identification.
 
 # Authors
-- Dominika Zoarska
+- Dominika Zaorska
 - Karina Wołoszyn
 
 # Used software
@@ -14,7 +14,6 @@ The main task of the project is to design and develop an application to make a q
 The general concept is pointed out in Fig. 1. 
 
 Additionally to the main application, user has a 2nd auxiliary application for generating a pair of RSA keys and securing the private key. The encrypted private key will be stored on a pendrive and it will be used for signing the document.
-
 
 ## General usage scenario:
 ![Fig. 1 – Block diagram of the project concept](fig1-block-diagram.png)
