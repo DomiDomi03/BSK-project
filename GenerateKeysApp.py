@@ -1,4 +1,5 @@
 import tkinter as tk
+import psutil
 import declarations as ds
 import RSA_keys as rsa
 import AES as aes
@@ -13,6 +14,8 @@ class GenerateKeysApp(tk.Tk):
         self.user_pin = None
         self.iv = None
 
+        self.save_location = tk.StringVar(self)
+
         self.status_label = tk.Label(self, text="", bg="#bcbfdc")
         self.status_label.pack(pady=5)
         self.progress = ttk.Progressbar(self, mode="determinate", maximum=100)
@@ -24,6 +27,18 @@ class GenerateKeysApp(tk.Tk):
         root.title("Generate keys App")
         root.geometry("300x300")
         root.configure(bg="#bcbfdc")
+
+        devices_list = list(self.find_devices())
+        self.save_location.set(devices_list[0])  # default
+
+        file_location_frame = tk.Frame(root, bg="#bcbfdc")
+        file_location_frame.pack(pady=10, anchor="center")
+
+        file_location_label = tk.Label(file_location_frame, text="Save location: ", bg="#bcbfdc")
+        file_location_label.pack(side="left", padx=10)
+
+        file_location_dropdown = tk.OptionMenu(file_location_frame, self.save_location, *devices_list)
+        file_location_dropdown.pack(side="left")
 
         title_label = tk.Label(root, text="Please enter PIN to encrypt the private key:", bg="#bcbfdc")
         title_label.pack(pady=20)
@@ -79,6 +94,14 @@ class GenerateKeysApp(tk.Tk):
             f.write(str(self.user_pin).encode())  # bytes Zapiszemy PIN w formie bajtów
             f.write(b"\niv: ")
             f.write(self.iv) # bytes
+
+    @staticmethod
+    def find_devices():
+        return {p.device for p in psutil.disk_partitions()}
+
+    @staticmethod
+    def find_usb():
+        return {p.device for p in psutil.disk_partitions() if 'removable' in p.opts.lower()}
 
 
 app = GenerateKeysApp()

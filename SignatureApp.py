@@ -4,7 +4,6 @@ from PDFFile import PDFFile
 import psutil
 import declarations as ds
 import os
-from pathlib import Path
 
 class SignatureApp(tk.Tk):
     def __init__(self, *args, **kwargs):
