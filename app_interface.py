@@ -4,7 +4,6 @@ from pathlib import Path
 import psutil
 import declarations as ds
 import os
-import AES
 
 class PDF:
     def __init__(self, pdf_name, pdf_path):

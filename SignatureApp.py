@@ -1,14 +1,25 @@
 import tkinter as tk
 from tkinter import filedialog
 from PDFFile import PDFFile
+import psutil
+import declarations as ds
+import os
 
 class SignatureApp(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
-        self.file = PDFFile(None, None)
         self.AES_key_pin = 0
+
+        self.file = PDFFile(None, None)
         self.file_state_info = tk.StringVar()
         self.file_state_info.set("No file chosen")
+        self.file_label = tk.Label(self, textvariable=self.file_state_info, bg="red", fg="black")
+
+        self.pendrive_connected = False
+        self.pendrive_state_info = tk.StringVar()
+        self.pendrive_state_info.set("No pendrive detected")
+        self.pendrive_label = tk.Label(self, textvariable=self.pendrive_state_info, bg="red", fg="black")
+
         # Początek programu
         self.create_main_window()
 
@@ -17,9 +28,14 @@ class SignatureApp(tk.Tk):
             title="Choose PDF file",
             filetypes=(("PDF files", "*.pdf"), ("All files", "*.*"))
         )
-        if chosen_file is not None:
-            self.file.setFile(chosen_file)
+        self.file.setFile(chosen_file)
+        self.check_file()
+
+    def check_file(self):
+        if self.file.is_chosen():
             self.file_state_info.set(self.file.getName())
+            self.file_label.configure(bg="#bcbfdc")
+            self.configure(bg="#bcbfdc")
 
     def pin(self, pin_entry, root):
         self.AES_key_pin = pin_entry.get()  # Przekazujemy wprowadzone dane
@@ -43,7 +59,33 @@ class SignatureApp(tk.Tk):
         verify_button = tk.Button(root, text="OK", command=lambda: self.pin(pin_entry, root))
         verify_button.pack(pady=10)
 
-        root.mainloop()
+        usb_path = self.find_usb()
+        full_path = os.path.join(list(usb_path)[0], ds.file_name)
+
+        # odczytanie klucza prywatnego zaszyfrowanego w AES
+        if os.path.exists(full_path) and os.path.isfile(full_path):
+            try:
+                with open(full_path, 'rb') as file:
+                    content = file.read()  # Odczytujemy zawartość binarną
+                    content = content.decode("latin1")  # koduje na odpowiedni format
+
+                # Szukamy prywatnego klucza
+                start_marker = "Decrypted private key:"
+                end_marker = "Public key:"
+                if start_marker in content:
+                    start_index = content.index(start_marker)  # Znajdź początek
+                    content_after_marker = content[start_index + len(start_marker) + 1:]
+                    # decrypted_key = content[start_index+len(start_marker)+1:]
+                    # print(decrypted_key)
+                    end_index = content_after_marker.find(end_marker)
+
+                    if end_index != -1:
+                        decrypted_key_full = content_after_marker[:end_index]  # .strip() - usuwa białe znaki
+                    print(decrypted_key_full)
+
+
+            except FileNotFoundError:
+                print("File not found!")
 
     def create_buttons(self, root):
         button_choose_pdf = tk.Button(
@@ -78,15 +120,47 @@ class SignatureApp(tk.Tk):
 
     def create_main_window(self):
         root = self
-        root.title("BSK project")
+        root.title("Signature App")
         root.geometry("300x300")
-        root.configure(bg="#bcbfdc")
+        root.configure(bg="red")
 
-        self.create_buttons(root)
+        # Wyświetlanie stanu pendrive'a
+        self.pendrive_label.pack(pady=(20, 0))
 
-        label = tk.Label(root, textvariable=self.file_state_info, bg="#bcbfdc", fg="black")
-        label.pack(pady=(20, 0))
+        # Wyświetlanie stanu pliku
+        self.file_label.pack(pady=(10, 0))
 
+        self.check_pendrive()
+
+    def check_pendrive(self):
+        pendrives = self.find_usb()
+
+        if pendrives and not self.pendrive_connected:
+            self.pendrive_connected = True
+            self.pendrive_state_info.set("Pendrive detected!")
+            self.pendrive_label.configure(bg="#bcbfdc")
+
+            self.create_buttons(self)
+
+        elif not pendrives and self.pendrive_connected:
+            self.pendrive_connected = False
+            self.pendrive_state_info.set("No pendrive detected")
+            self.pendrive_label.configure(bg="#ff0000")
+            self.file_state_info.set("No file chosen")
+            self.file_label.configure(bg="#ff0000")
+
+            self.remove_buttons()
+
+        self.after(500, lambda: self.check_pendrive())
+
+    @staticmethod
+    def find_usb():
+        return {p.device for p in psutil.disk_partitions() if 'removable' in p.opts.lower()}
+
+    def remove_buttons(self):
+        for widget in self.winfo_children():
+            if isinstance(widget, tk.Button):
+                widget.destroy()
 
 app = SignatureApp()
 app.mainloop()
