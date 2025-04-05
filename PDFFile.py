@@ -26,5 +26,11 @@ class PDFFile():
         self.setPath(file_info)
         self.setName(file_info.name)
 
+    def is_chosen(self):
+        if self.path is None or self.name is None:
+            self.setFile(None, None)
+            return False
+        return True
+
     def __str__(self):
         return f"{self.name}"
