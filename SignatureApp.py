@@ -83,7 +83,6 @@ class SignatureApp(tk.Tk):
                         decrypted_key_full = content_after_marker[:end_index]  # .strip() - usuwa białe znaki
                     print(decrypted_key_full)
 
-
             except FileNotFoundError:
                 print("File not found!")
 
