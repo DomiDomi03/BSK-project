@@ -1,3 +1,4 @@
+from random import random
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization
 
@@ -23,3 +24,6 @@ def convert_PEM_public(key):
     encoding=serialization.Encoding.PEM,
     format=serialization.PublicFormat.SubjectPublicKeyInfo)
 )
+
+def generate_pin():
+    return random.randint(0, 99999999)

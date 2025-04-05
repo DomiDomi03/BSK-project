@@ -99,9 +99,10 @@ class GenerateKeysApp(tk.Tk):
                 f.write(self.encrypted_private_key)  # bytes
                 f.write(b"\n\nPublic key: ")
                 PEM_public_key = rsa.convert_PEM_public(self.public_key)
-                f.write(PEM_public_key)  # bytes(PEM) Zapiszemy klucz publiczny w formacie PEM
+                f.write(PEM_public_key)  # bytes(PEM) - Zapiszemy klucz publiczny w formacie PEM
+                self.user_pin = rsa.generate_pin() # wykorzystanie generacji danych, po wykomentowaniu będzie to input od użytkownika
                 f.write(b"\nUser_pin: ")
-                f.write(str(self.user_pin).encode())  # bytes Zapiszemy PIN w formie bajtów
+                f.write(str(self.user_pin).encode())  # bytes - Zapiszemy PIN w formie bajtów
                 f.write(b"\niv: ")
                 f.write(self.iv)  # bytes
             print(f"File saved at {file_path}")

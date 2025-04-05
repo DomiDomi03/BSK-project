@@ -13,7 +13,6 @@ class PDF:
     def __str__(self):
         return f"{self.pdf_name}"
 
-
 # podanie PIN przez użytkownika
 def pin(AES_key_pin, pin_entry, root):
     AES_key_pin = pin_entry.get() # Przekazujemy wprowadzone dane
