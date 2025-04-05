@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 import psutil
 import declarations as ds
@@ -84,16 +85,30 @@ class GenerateKeysApp(tk.Tk):
         self.status_label.config(text="Keys generated and saved successfully!")
 
     def save_to_file(self):
-        with open(ds.file_name, "wb") as f:
-            f.write(b"Decrypted private key: ")
-            f.write(self.encrypted_private_key) # bytes
-            f.write(b"\n\nPublic key: ")
-            PEM_public_key = rsa.convert_PEM_public(self.public_key)
-            f.write(PEM_public_key)  # bytes(PEM) Zapiszemy klucz publiczny w formacie PEM
-            f.write(b"\nUser_pin: ")
-            f.write(str(self.user_pin).encode())  # bytes Zapiszemy PIN w formie bajtów
-            f.write(b"\niv: ")
-            f.write(self.iv) # bytes
+        save_path = self.save_location.get()
+
+        if not os.path.isdir(save_path): #is path valid
+            print("Invalid path")
+            return
+
+        file_path = os.path.join(save_path, ds.file_name)
+
+        try:
+            with open(file_path, "wb") as f:
+                f.write(b"Decrypted private key: ")
+                f.write(self.encrypted_private_key)  # bytes
+                f.write(b"\n\nPublic key: ")
+                PEM_public_key = rsa.convert_PEM_public(self.public_key)
+                f.write(PEM_public_key)  # bytes(PEM) Zapiszemy klucz publiczny w formacie PEM
+                f.write(b"\nUser_pin: ")
+                f.write(str(self.user_pin).encode())  # bytes Zapiszemy PIN w formie bajtów
+                f.write(b"\niv: ")
+                f.write(self.iv)  # bytes
+            print(f"File saved at {file_path}")
+
+        except Exception as e:
+            print(f"Error saving file: {e}")
+
 
     @staticmethod
     def find_devices():
