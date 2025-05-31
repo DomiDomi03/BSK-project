@@ -7,6 +7,8 @@ The main goal of the project is to realize a software tool for emulating the qua
 
 # Used software
 PyCharm Community Edition 2024.3.5.
+Doxygen version 1.13.2
+Doxywizard (Doxygen GUI) with 5.15.2 Qt version
 
 # Tasks
 The main task of the project is to design and develop an application to make a qualified electronic signature according to PAdES (PDF Advanced Electronic Signature) standard concept. In general, the application must take a form of a set of tools for realization the qualified electronic signature.

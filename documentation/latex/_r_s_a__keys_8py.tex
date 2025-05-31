@@ -1,0 +1,86 @@
+\doxysection{BSK-\/project/\+RSA\+\_\+keys.py File Reference}
+\hypertarget{_r_s_a__keys_8py}{}\label{_r_s_a__keys_8py}\index{BSK-\/project/RSA\_keys.py@{BSK-\/project/RSA\_keys.py}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_r_s_a__keys_8py_aac460f397e70c82a2e519f927e47fe6e}\label{_r_s_a__keys_8py_aac460f397e70c82a2e519f927e47fe6e} 
+{\bfseries RSA\+\_\+keys.\+create\+\_\+private\+\_\+key} ()
+\begin{DoxyCompactList}\small\item\em Function that generates private key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_s_a__keys_8py_ac25bbeb4fdb50227fbcd1258c9b85a0f}{RSA\+\_\+keys.\+create\+\_\+public\+\_\+key}} (private\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Function that generates public key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_s_a__keys_8py_a27f9b35e172629ad4c598ed3adc68d09}{RSA\+\_\+keys.\+convert\+\_\+\+PEM\+\_\+private}} (key)
+\begin{DoxyCompactList}\small\item\em This function takes a private key and converts it into its PEM-\/encoded byte representation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_s_a__keys_8py_af8142a097ad06418d4afff9f18184e1a}{RSA\+\_\+keys.\+convert\+\_\+\+PEM\+\_\+public}} (key)
+\begin{DoxyCompactList}\small\item\em This function takes a public key and converts it into its PEM-\/encoded byte representation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r_s_a__keys_8py_ad1a66e8bd839956dc6d539dca7231c52}{RSA\+\_\+keys.\+generate\+\_\+pin}} ()
+\begin{DoxyCompactList}\small\item\em Function that generates user pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File to generate a pair of RSA keys (public and private) \begin{DoxyDate}{Date}
+10-\/04-\/2025 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_r_s_a__keys_8py_a27f9b35e172629ad4c598ed3adc68d09}\index{RSA\_keys.py@{RSA\_keys.py}!convert\_PEM\_private@{convert\_PEM\_private}}
+\index{convert\_PEM\_private@{convert\_PEM\_private}!RSA\_keys.py@{RSA\_keys.py}}
+\doxysubsubsection{\texorpdfstring{convert\_PEM\_private()}{convert\_PEM\_private()}}
+{\footnotesize\ttfamily \label{_r_s_a__keys_8py_a27f9b35e172629ad4c598ed3adc68d09} 
+RSA\+\_\+keys.\+convert\+\_\+\+PEM\+\_\+private (\begin{DoxyParamCaption}\item[{}]{key}{}\end{DoxyParamCaption})}
+
+
+
+This function takes a private key and converts it into its PEM-\/encoded byte representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & is a private key \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_r_s_a__keys_8py_af8142a097ad06418d4afff9f18184e1a}\index{RSA\_keys.py@{RSA\_keys.py}!convert\_PEM\_public@{convert\_PEM\_public}}
+\index{convert\_PEM\_public@{convert\_PEM\_public}!RSA\_keys.py@{RSA\_keys.py}}
+\doxysubsubsection{\texorpdfstring{convert\_PEM\_public()}{convert\_PEM\_public()}}
+{\footnotesize\ttfamily \label{_r_s_a__keys_8py_af8142a097ad06418d4afff9f18184e1a} 
+RSA\+\_\+keys.\+convert\+\_\+\+PEM\+\_\+public (\begin{DoxyParamCaption}\item[{}]{key}{}\end{DoxyParamCaption})}
+
+
+
+This function takes a public key and converts it into its PEM-\/encoded byte representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & is a public key \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_r_s_a__keys_8py_ac25bbeb4fdb50227fbcd1258c9b85a0f}\index{RSA\_keys.py@{RSA\_keys.py}!create\_public\_key@{create\_public\_key}}
+\index{create\_public\_key@{create\_public\_key}!RSA\_keys.py@{RSA\_keys.py}}
+\doxysubsubsection{\texorpdfstring{create\_public\_key()}{create\_public\_key()}}
+{\footnotesize\ttfamily \label{_r_s_a__keys_8py_ac25bbeb4fdb50227fbcd1258c9b85a0f} 
+RSA\+\_\+keys.\+create\+\_\+public\+\_\+key (\begin{DoxyParamCaption}\item[{}]{private\+\_\+key}{}\end{DoxyParamCaption})}
+
+
+
+Function that generates public key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em private\+\_\+key} & is a generated private key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+public key based on generated private key 
+\end{DoxyReturn}
+\Hypertarget{_r_s_a__keys_8py_ad1a66e8bd839956dc6d539dca7231c52}\index{RSA\_keys.py@{RSA\_keys.py}!generate\_pin@{generate\_pin}}
+\index{generate\_pin@{generate\_pin}!RSA\_keys.py@{RSA\_keys.py}}
+\doxysubsubsection{\texorpdfstring{generate\_pin()}{generate\_pin()}}
+{\footnotesize\ttfamily \label{_r_s_a__keys_8py_ad1a66e8bd839956dc6d539dca7231c52} 
+RSA\+\_\+keys.\+generate\+\_\+pin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function that generates user pin. 
+
+\begin{DoxyReturn}{Returns}
+random integer from 0 to 99999999 (generation of user pin) 
+\end{DoxyReturn}

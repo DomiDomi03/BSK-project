@@ -1,0 +1,239 @@
+\doxysection{Signature\+App.\+Signature\+App Class Reference}
+\hypertarget{class_signature_app_1_1_signature_app}{}\label{class_signature_app_1_1_signature_app}\index{SignatureApp.SignatureApp@{SignatureApp.SignatureApp}}
+
+
+A class that creates and verifies the signature of a PDF file.  
+
+
+Inheritance diagram for Signature\+App.\+Signature\+App\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_signature_app_1_1_signature_app}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a4eac8f1d29dba38a80a43f0cd07ab4d8}\label{class_signature_app_1_1_signature_app_a4eac8f1d29dba38a80a43f0cd07ab4d8} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \texorpdfstring{$\ast$}{*}args, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kwargs)
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a80072c47b97baffc5e33522a70c2ef4e}\label{class_signature_app_1_1_signature_app_a80072c47b97baffc5e33522a70c2ef4e} 
+{\bfseries create\+\_\+main\+\_\+window} (self)
+\begin{DoxyCompactList}\small\item\em Method that creates main window of application. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_signature_app_1_1_signature_app_ab7b2b0ca793bcc47cd9866ad44f3a2c7}{create\+\_\+buttons}} (self, root)
+\begin{DoxyCompactList}\small\item\em Method that creates button using by application. \end{DoxyCompactList}\item 
+\Hypertarget{class_signature_app_1_1_signature_app_abf984711848e6b39e977fa7feb99febb}\label{class_signature_app_1_1_signature_app_abf984711848e6b39e977fa7feb99febb} 
+{\bfseries remove\+\_\+buttons} (self)
+\begin{DoxyCompactList}\small\item\em Method that deletes the buttons from the application. \end{DoxyCompactList}\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a4855e52d585aeb0461e24655fd5c4a04}\label{class_signature_app_1_1_signature_app_a4855e52d585aeb0461e24655fd5c4a04} 
+{\bfseries check\+\_\+pendrive} (self)
+\begin{DoxyCompactList}\small\item\em Method that continuously monitors the presence of a USB pendrive. \end{DoxyCompactList}\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a74b4a21dc9993e7441d3e2437b2d3c0f}\label{class_signature_app_1_1_signature_app_a74b4a21dc9993e7441d3e2437b2d3c0f} 
+{\bfseries choose\+\_\+pdf} (self)
+\begin{DoxyCompactList}\small\item\em Method that checks if the file is a .pdf type. \end{DoxyCompactList}\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a4af979cf7d99469b89f237b94b07fba1}\label{class_signature_app_1_1_signature_app_a4af979cf7d99469b89f237b94b07fba1} 
+{\bfseries check\+\_\+file} (self)
+\begin{DoxyCompactList}\small\item\em Method that that changes the style of the window when the file was choosen by the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_signature_app_1_1_signature_app_a016e8d1bf7f405aa3c3650ed3ec413ae}{pin}} (self, pin\+\_\+entry, root)
+\begin{DoxyCompactList}\small\item\em Method that adds signature to the .pdf file. \end{DoxyCompactList}\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a1be2b7f928b4916ee01f5e89d8831ed1}\label{class_signature_app_1_1_signature_app_a1be2b7f928b4916ee01f5e89d8831ed1} 
+{\bfseries sign\+\_\+pdf} (self)
+\begin{DoxyCompactList}\small\item\em Method that generates the signature to the .pdf file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_signature_app_1_1_signature_app_a8e74b2e0a4e50d29afc2c2b6e3eb6923}{read\+\_\+signature\+\_\+from\+\_\+pdf}} (self, path)
+\begin{DoxyCompactList}\small\item\em Method that reads the signature from the .pdf file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_signature_app_1_1_signature_app_a7801d6a9ca70f558eb497cd85aa5c7ab}{remove\+\_\+signature\+\_\+from\+\_\+pdf}} (self, input\+\_\+path, output\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Method that deletes the signature from the .pdf file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_signature_app_1_1_signature_app_a685cf6d0dc836918f2b54cc7e4838bac}{verify\+\_\+pdf}} (self)
+\begin{DoxyCompactList}\small\item\em Method that verifies the signature in .pdf file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_signature_app_1_1_signature_app_ac6bfd65b3913c45a752e7c5e3722c152}{create\+\_\+signature}} (self, decrypted\+\_\+key\+\_\+full)
+\begin{DoxyCompactList}\small\item\em Method that caretes signature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_signature_app_1_1_signature_app_a27a026954008947b32ab53a8b1c58c0b}{read\+\_\+private\+\_\+key\+\_\+from\+\_\+file}} (self)
+\begin{DoxyCompactList}\small\item\em Method that reads the public/priavte key from usb\textquotesingle{}s file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_signature_app_1_1_signature_app_ab912f26796c8c3e7592f9b9379715406}{hash\+\_\+pdf}} (self, pdf\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Method that hashes the .pdf file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a3cbe0f4619d8765968143589c54ddc06}\label{class_signature_app_1_1_signature_app_a3cbe0f4619d8765968143589c54ddc06} 
+int {\bfseries AES\+\_\+key\+\_\+pin} = 0
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a84d5a2dc93cdf8c0273b79edb104263e}\label{class_signature_app_1_1_signature_app_a84d5a2dc93cdf8c0273b79edb104263e} 
+bool {\bfseries mode} = True
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a83a6820ed45a9dd60bc4a3f17e4f2bf9}\label{class_signature_app_1_1_signature_app_a83a6820ed45a9dd60bc4a3f17e4f2bf9} 
+{\bfseries file} = \mbox{\hyperlink{class_p_d_f_file_1_1_p_d_f_file}{PDFFile}}(None, None)
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a5c480b88709d9e34052d4862cd21e01f}\label{class_signature_app_1_1_signature_app_a5c480b88709d9e34052d4862cd21e01f} 
+{\bfseries file\+\_\+state\+\_\+info} = tk.\+String\+Var()
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_af4f9a465fc07f598f76081f1f3fdcf43}\label{class_signature_app_1_1_signature_app_af4f9a465fc07f598f76081f1f3fdcf43} 
+{\bfseries file\+\_\+label} = tk.\+Label(self, textvariable=self.\+file\+\_\+state\+\_\+info, bg="{}red"{}, fg="{}black"{})
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a4940607e02aa02dd103a2ebdf689ac58}\label{class_signature_app_1_1_signature_app_a4940607e02aa02dd103a2ebdf689ac58} 
+bool {\bfseries pendrive\+\_\+connected} = False
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a13a9c9a48b37bfed36b387e960ade095}\label{class_signature_app_1_1_signature_app_a13a9c9a48b37bfed36b387e960ade095} 
+{\bfseries pendrive\+\_\+state\+\_\+info} = tk.\+String\+Var()
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_abe99f074c5fca55aadf81e6a6e4d5eaa}\label{class_signature_app_1_1_signature_app_abe99f074c5fca55aadf81e6a6e4d5eaa} 
+{\bfseries pendrive\+\_\+label} = tk.\+Label(self, textvariable=self.\+pendrive\+\_\+state\+\_\+info, bg="{}red"{}, fg="{}black"{})
+\item 
+\Hypertarget{class_signature_app_1_1_signature_app_a9449b93ab24397517301ce0d60639db9}\label{class_signature_app_1_1_signature_app_a9449b93ab24397517301ce0d60639db9} 
+{\bfseries save\+\_\+location} = tk.\+String\+Var(self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that creates and verifies the signature of a PDF file. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_signature_app_1_1_signature_app_ab7b2b0ca793bcc47cd9866ad44f3a2c7}\index{SignatureApp.SignatureApp@{SignatureApp.SignatureApp}!create\_buttons@{create\_buttons}}
+\index{create\_buttons@{create\_buttons}!SignatureApp.SignatureApp@{SignatureApp.SignatureApp}}
+\doxysubsubsection{\texorpdfstring{create\_buttons()}{create\_buttons()}}
+{\footnotesize\ttfamily \label{class_signature_app_1_1_signature_app_ab7b2b0ca793bcc47cd9866ad44f3a2c7} 
+Signature\+App.\+Signature\+App.\+create\+\_\+buttons (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{root}{}\end{DoxyParamCaption})}
+
+
+
+Method that creates button using by application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & is a reference to main GUI window \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_signature_app_1_1_signature_app_ac6bfd65b3913c45a752e7c5e3722c152}\index{SignatureApp.SignatureApp@{SignatureApp.SignatureApp}!create\_signature@{create\_signature}}
+\index{create\_signature@{create\_signature}!SignatureApp.SignatureApp@{SignatureApp.SignatureApp}}
+\doxysubsubsection{\texorpdfstring{create\_signature()}{create\_signature()}}
+{\footnotesize\ttfamily \label{class_signature_app_1_1_signature_app_ac6bfd65b3913c45a752e7c5e3722c152} 
+Signature\+App.\+Signature\+App.\+create\+\_\+signature (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{decrypted\+\_\+key\+\_\+full}{}\end{DoxyParamCaption})}
+
+
+
+Method that caretes signature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em decrypted\+\_\+key\+\_\+full} & is a decrypted private key in PEM format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created PAd\+ES signature 
+\end{DoxyReturn}
+\Hypertarget{class_signature_app_1_1_signature_app_ab912f26796c8c3e7592f9b9379715406}\index{SignatureApp.SignatureApp@{SignatureApp.SignatureApp}!hash\_pdf@{hash\_pdf}}
+\index{hash\_pdf@{hash\_pdf}!SignatureApp.SignatureApp@{SignatureApp.SignatureApp}}
+\doxysubsubsection{\texorpdfstring{hash\_pdf()}{hash\_pdf()}}
+{\footnotesize\ttfamily \label{class_signature_app_1_1_signature_app_ab912f26796c8c3e7592f9b9379715406} 
+Signature\+App.\+Signature\+App.\+hash\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{pdf\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Method that hashes the .pdf file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdf\+\_\+path} & is the system path to the .pdf file, where we want to add signature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hased pdf file 
+\end{DoxyReturn}
+\Hypertarget{class_signature_app_1_1_signature_app_a016e8d1bf7f405aa3c3650ed3ec413ae}\index{SignatureApp.SignatureApp@{SignatureApp.SignatureApp}!pin@{pin}}
+\index{pin@{pin}!SignatureApp.SignatureApp@{SignatureApp.SignatureApp}}
+\doxysubsubsection{\texorpdfstring{pin()}{pin()}}
+{\footnotesize\ttfamily \label{class_signature_app_1_1_signature_app_a016e8d1bf7f405aa3c3650ed3ec413ae} 
+Signature\+App.\+Signature\+App.\+pin (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{pin\+\_\+entry}{, }\item[{}]{root}{}\end{DoxyParamCaption})}
+
+
+
+Method that adds signature to the .pdf file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+entry} & is the pin given by the user in order to decrypt the private key from the usb\textquotesingle{}s file \\
+\hline
+{\em root} & is a reference to main GUI window \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_signature_app_1_1_signature_app_a27a026954008947b32ab53a8b1c58c0b}\index{SignatureApp.SignatureApp@{SignatureApp.SignatureApp}!read\_private\_key\_from\_file@{read\_private\_key\_from\_file}}
+\index{read\_private\_key\_from\_file@{read\_private\_key\_from\_file}!SignatureApp.SignatureApp@{SignatureApp.SignatureApp}}
+\doxysubsubsection{\texorpdfstring{read\_private\_key\_from\_file()}{read\_private\_key\_from\_file()}}
+{\footnotesize\ttfamily \label{class_signature_app_1_1_signature_app_a27a026954008947b32ab53a8b1c58c0b} 
+Signature\+App.\+Signature\+App.\+read\+\_\+private\+\_\+key\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Method that reads the public/priavte key from usb\textquotesingle{}s file. 
+
+\begin{DoxyReturn}{Returns}
+None if file does not exist 
+
+decrypted key if user chose signature option 
+
+public key if user chose verify option 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\+Not\+Found\+Error} & if file is not found \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_signature_app_1_1_signature_app_a8e74b2e0a4e50d29afc2c2b6e3eb6923}\index{SignatureApp.SignatureApp@{SignatureApp.SignatureApp}!read\_signature\_from\_pdf@{read\_signature\_from\_pdf}}
+\index{read\_signature\_from\_pdf@{read\_signature\_from\_pdf}!SignatureApp.SignatureApp@{SignatureApp.SignatureApp}}
+\doxysubsubsection{\texorpdfstring{read\_signature\_from\_pdf()}{read\_signature\_from\_pdf()}}
+{\footnotesize\ttfamily \label{class_signature_app_1_1_signature_app_a8e74b2e0a4e50d29afc2c2b6e3eb6923} 
+Signature\+App.\+Signature\+App.\+read\+\_\+signature\+\_\+from\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Method that reads the signature from the .pdf file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & is the system path to the .pdf file with signature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+signature in hex 
+
+None if the signature is not found 
+\end{DoxyReturn}
+\Hypertarget{class_signature_app_1_1_signature_app_a7801d6a9ca70f558eb497cd85aa5c7ab}\index{SignatureApp.SignatureApp@{SignatureApp.SignatureApp}!remove\_signature\_from\_pdf@{remove\_signature\_from\_pdf}}
+\index{remove\_signature\_from\_pdf@{remove\_signature\_from\_pdf}!SignatureApp.SignatureApp@{SignatureApp.SignatureApp}}
+\doxysubsubsection{\texorpdfstring{remove\_signature\_from\_pdf()}{remove\_signature\_from\_pdf()}}
+{\footnotesize\ttfamily \label{class_signature_app_1_1_signature_app_a7801d6a9ca70f558eb497cd85aa5c7ab} 
+Signature\+App.\+Signature\+App.\+remove\+\_\+signature\+\_\+from\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{input\+\_\+path}{, }\item[{}]{output\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Method that deletes the signature from the .pdf file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+path} & is the system path to the .pdf file with signature \\
+\hline
+{\em output\+\_\+path} & is the system path to the new .pdf file without the signature \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_signature_app_1_1_signature_app_a685cf6d0dc836918f2b54cc7e4838bac}\index{SignatureApp.SignatureApp@{SignatureApp.SignatureApp}!verify\_pdf@{verify\_pdf}}
+\index{verify\_pdf@{verify\_pdf}!SignatureApp.SignatureApp@{SignatureApp.SignatureApp}}
+\doxysubsubsection{\texorpdfstring{verify\_pdf()}{verify\_pdf()}}
+{\footnotesize\ttfamily \label{class_signature_app_1_1_signature_app_a685cf6d0dc836918f2b54cc7e4838bac} 
+Signature\+App.\+Signature\+App.\+verify\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Method that verifies the signature in .pdf file. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em message} & if verification of signature fails (either not foud or incorrect) \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Null if public key is not found 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+BSK-\/project/\mbox{\hyperlink{_signature_app_8py}{Signature\+App.\+py}}\end{DoxyCompactItemize}

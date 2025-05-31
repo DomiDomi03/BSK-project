@@ -1,0 +1,132 @@
+\doxysection{Generate\+Keys\+App.\+Generate\+Keys\+App Class Reference}
+\hypertarget{class_generate_keys_app_1_1_generate_keys_app}{}\label{class_generate_keys_app_1_1_generate_keys_app}\index{GenerateKeysApp.GenerateKeysApp@{GenerateKeysApp.GenerateKeysApp}}
+
+
+A class that generates a key pair (public and private), gets the pin from the user and saves date to the .txt file.  
+
+
+Inheritance diagram for Generate\+Keys\+App.\+Generate\+Keys\+App\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_generate_keys_app_1_1_generate_keys_app}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generate_keys_app_1_1_generate_keys_app_a20f9b57a5c07d7aca30667a72c687246}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \texorpdfstring{$\ast$}{*}args, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kwargs)
+\begin{DoxyCompactList}\small\item\em Constructor of the \doxylink{class_generate_keys_app_1_1_generate_keys_app}{Generate\+Keys\+App}, starts the application. \end{DoxyCompactList}\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_af0f92c8a9dd42f9ec1e4ac38c09b39cd}\label{class_generate_keys_app_1_1_generate_keys_app_af0f92c8a9dd42f9ec1e4ac38c09b39cd} 
+{\bfseries create\+\_\+main\+\_\+window} (self)
+\begin{DoxyCompactList}\small\item\em Method that creates main window of application. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_generate_keys_app_1_1_generate_keys_app_a86d67d6c18189685f495362778f98f67}{save\+\_\+pin}} (self, new\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em Method that saves the user pin and starts generating the keys for the user. \end{DoxyCompactList}\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_a5038509cada78b97a8ea08ee614e930c}\label{class_generate_keys_app_1_1_generate_keys_app_a5038509cada78b97a8ea08ee614e930c} 
+{\bfseries run\+\_\+generation\+\_\+process} (self)
+\begin{DoxyCompactList}\small\item\em Method that saves the generated keys and user pin to the .txt file. \end{DoxyCompactList}\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_aaad03057bcbdfbe978a8f425f08014a5}\label{class_generate_keys_app_1_1_generate_keys_app_aaad03057bcbdfbe978a8f425f08014a5} 
+{\bfseries on\+\_\+generation\+\_\+complete} (self)
+\begin{DoxyCompactList}\small\item\em Method that informs user about the successful generation of keys and saving the date to the .txt file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_generate_keys_app_1_1_generate_keys_app_aa4f7c0aefb49e6dc2293a40fa4c8c995}{save\+\_\+to\+\_\+file}} (self)
+\begin{DoxyCompactList}\small\item\em Method that save the generated keys and pin to the .txt file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_ad953229b5dddcc99931ce027c1fdd358}\label{class_generate_keys_app_1_1_generate_keys_app_ad953229b5dddcc99931ce027c1fdd358} 
+{\bfseries encrypted\+\_\+private\+\_\+key} = None
+\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_ab6244af3b3cd6288326df4d4a8a3ec8e}\label{class_generate_keys_app_1_1_generate_keys_app_ab6244af3b3cd6288326df4d4a8a3ec8e} 
+{\bfseries public\+\_\+key} = None
+\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_ae9acddc70eeaf6624409d204d914d742}\label{class_generate_keys_app_1_1_generate_keys_app_ae9acddc70eeaf6624409d204d914d742} 
+{\bfseries user\+\_\+pin} = None
+\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_a03bead846ac8e26f3261e6451d492429}\label{class_generate_keys_app_1_1_generate_keys_app_a03bead846ac8e26f3261e6451d492429} 
+{\bfseries iv} = None
+\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_a42555c49fd462c595b8dae8d19caa90d}\label{class_generate_keys_app_1_1_generate_keys_app_a42555c49fd462c595b8dae8d19caa90d} 
+{\bfseries save\+\_\+location} = tk.\+String\+Var(self)
+\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_adb49b175b6c74cd9b93a1126f6409e21}\label{class_generate_keys_app_1_1_generate_keys_app_adb49b175b6c74cd9b93a1126f6409e21} 
+{\bfseries status\+\_\+label} = tk.\+Label(self, text="{}"{}, bg="{}\#bcbfdc"{})
+\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_abbdb64ce0cb68f7e0bd9859ead1722ab}\label{class_generate_keys_app_1_1_generate_keys_app_abbdb64ce0cb68f7e0bd9859ead1722ab} 
+{\bfseries progress} = ttk.\+Progressbar(self, mode="{}determinate"{}, maximum=100)
+\item 
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_ab2723bd7aacc1ddec807c45e4e76d458}\label{class_generate_keys_app_1_1_generate_keys_app_ab2723bd7aacc1ddec807c45e4e76d458} 
+{\bfseries on\+\_\+generation\+\_\+complete} = "{}Saving to file..."{}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that generates a key pair (public and private), gets the pin from the user and saves date to the .txt file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_a20f9b57a5c07d7aca30667a72c687246}\index{GenerateKeysApp.GenerateKeysApp@{GenerateKeysApp.GenerateKeysApp}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!GenerateKeysApp.GenerateKeysApp@{GenerateKeysApp.GenerateKeysApp}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_generate_keys_app_1_1_generate_keys_app_a20f9b57a5c07d7aca30667a72c687246} 
+Generate\+Keys\+App.\+Generate\+Keys\+App.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{\texorpdfstring{$\ast$}{*}}]{args}{, }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{kwargs}{}\end{DoxyParamCaption})}
+
+
+
+Constructor of the \doxylink{class_generate_keys_app_1_1_generate_keys_app}{Generate\+Keys\+App}, starts the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encrypted\+\_\+private\+\_\+key} & Stores the encrypted private key, initially None. \\
+\hline
+{\em public\+\_\+key} & Stores the public key, initially None. \\
+\hline
+{\em user\+\_\+pin} & The user\textquotesingle{}s PIN code, initially None. \\
+\hline
+{\em iv} & Initialization vector (IV) for AES encryption, initially None. \\
+\hline
+{\em save\+\_\+location} & Tkinter String\+Var representing the path where files will be saved. \\
+\hline
+{\em status\+\_\+label} & Tkinter Label widget used to display status messages. \\
+\hline
+{\em progress} & Tkinter Progressbar widget showing operation progress. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_a86d67d6c18189685f495362778f98f67}\index{GenerateKeysApp.GenerateKeysApp@{GenerateKeysApp.GenerateKeysApp}!save\_pin@{save\_pin}}
+\index{save\_pin@{save\_pin}!GenerateKeysApp.GenerateKeysApp@{GenerateKeysApp.GenerateKeysApp}}
+\doxysubsubsection{\texorpdfstring{save\_pin()}{save\_pin()}}
+{\footnotesize\ttfamily \label{class_generate_keys_app_1_1_generate_keys_app_a86d67d6c18189685f495362778f98f67} 
+Generate\+Keys\+App.\+Generate\+Keys\+App.\+save\+\_\+pin (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{new\+\_\+pin}{}\end{DoxyParamCaption})}
+
+
+
+Method that saves the user pin and starts generating the keys for the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+pin} & is a pin given by the user \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_generate_keys_app_1_1_generate_keys_app_aa4f7c0aefb49e6dc2293a40fa4c8c995}\index{GenerateKeysApp.GenerateKeysApp@{GenerateKeysApp.GenerateKeysApp}!save\_to\_file@{save\_to\_file}}
+\index{save\_to\_file@{save\_to\_file}!GenerateKeysApp.GenerateKeysApp@{GenerateKeysApp.GenerateKeysApp}}
+\doxysubsubsection{\texorpdfstring{save\_to\_file()}{save\_to\_file()}}
+{\footnotesize\ttfamily \label{class_generate_keys_app_1_1_generate_keys_app_aa4f7c0aefb49e6dc2293a40fa4c8c995} 
+Generate\+Keys\+App.\+Generate\+Keys\+App.\+save\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Method that save the generated keys and pin to the .txt file. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if method can not save the file \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Null if the path is invalid 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+BSK-\/project/\mbox{\hyperlink{_generate_keys_app_8py}{Generate\+Keys\+App.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\doxysection{BSK-\/project/\+AES.py File Reference}
+\hypertarget{_a_e_s_8py}{}\label{_a_e_s_8py}\index{BSK-\/project/AES.py@{BSK-\/project/AES.py}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_a_e_s_8py_a0dc682528043cd9eb352f78dea8444de}{AES.\+encrypt\+\_\+aes}} (pin, private\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Function that encrypts the user\textquotesingle{}s private key by using AES algorithm. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_a_e_s_8py_aa266aca02d9ebff121e39ce7f15553cc}{AES.\+decrypt\+\_\+aes}} (decrypt\+\_\+key, iv, pin)
+\begin{DoxyCompactList}\small\item\em Function that decrypts the user\textquotesingle{}s private key by using AES algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File to encrypt RSA keys by using AES algorithm \begin{DoxyDate}{Date}
+10-\/04-\/2025 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_a_e_s_8py_aa266aca02d9ebff121e39ce7f15553cc}\index{AES.py@{AES.py}!decrypt\_aes@{decrypt\_aes}}
+\index{decrypt\_aes@{decrypt\_aes}!AES.py@{AES.py}}
+\doxysubsubsection{\texorpdfstring{decrypt\_aes()}{decrypt\_aes()}}
+{\footnotesize\ttfamily \label{_a_e_s_8py_aa266aca02d9ebff121e39ce7f15553cc} 
+AES.\+decrypt\+\_\+aes (\begin{DoxyParamCaption}\item[{}]{decrypt\+\_\+key}{, }\item[{}]{iv}{, }\item[{}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Function that decrypts the user\textquotesingle{}s private key by using AES algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em decrypt\+\_\+key} & is the decrypted private key \\
+\hline
+{\em iv} & is an initialization vector used in encryption of the private key \\
+\hline
+{\em pin} & is a pin given by the user in order to use private key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+decrypted private key of user 
+\end{DoxyReturn}
+\Hypertarget{_a_e_s_8py_a0dc682528043cd9eb352f78dea8444de}\index{AES.py@{AES.py}!encrypt\_aes@{encrypt\_aes}}
+\index{encrypt\_aes@{encrypt\_aes}!AES.py@{AES.py}}
+\doxysubsubsection{\texorpdfstring{encrypt\_aes()}{encrypt\_aes()}}
+{\footnotesize\ttfamily \label{_a_e_s_8py_a0dc682528043cd9eb352f78dea8444de} 
+AES.\+encrypt\+\_\+aes (\begin{DoxyParamCaption}\item[{}]{pin}{, }\item[{}]{private\+\_\+key}{}\end{DoxyParamCaption})}
+
+
+
+Function that encrypts the user\textquotesingle{}s private key by using AES algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em private\+\_\+key} & is the private key of user \\
+\hline
+{\em pin} & is the pin given by the user in order to encrypt the private key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+iv initialization vector used in encryption of the private key and encrypted private key of user 
+\end{DoxyReturn}
