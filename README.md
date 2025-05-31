@@ -18,7 +18,7 @@ The general concept is pointed out in Fig. 1.
 Additionally to the main application, user has a 2nd auxiliary application for generating a pair of RSA keys and securing the private key. The encrypted private key will be stored on a pendrive and it will be used for signing the document.
 
 ## General usage scenario:
-![Fig. 1 – Block diagram of the project concept](fig1-block-diagram.png)
+![Fig. 1 – Block diagram of the project concept](images/fig1-block-diagram.png)
 
 The user A has a hardware tool (a pendrive) with encrypted private RSA key. The key is encrypted by AES algorithm using as a key user’s PIN number. 
 The PIN is given by the user during generating a pair of RSA keys using an auxiliary application. 
