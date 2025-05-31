@@ -3,7 +3,6 @@
 #	@details File to handle PDF operations
 #	@date 20-04-2025
 ##
-
 from pathlib import Path
 
 
@@ -49,7 +48,8 @@ class PDFFile():
         self.setName(file_info.name)
 
     ## Method that check if the file is set
-    # @return True if the file is set and False if is not.
+    # @return True if the file is set
+    # @return False if it is not.
     def is_chosen(self):
         if self.path is None or self.name is None:
             self.setFile(None, None)
