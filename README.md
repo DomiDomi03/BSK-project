@@ -7,7 +7,9 @@ The main goal of the project is to realize a software tool for emulating the qua
 
 # Used software
 PyCharm Community Edition 2024.3.5.
+
 Doxygen version 1.13.2
+
 Doxywizard (Doxygen GUI) with 5.15.2 Qt version
 
 # Tasks
