@@ -46,7 +46,7 @@ class SignatureApp(tk.Tk):
         self.pendrive_connected = False
         self.pendrive_state_info = tk.StringVar()
         self.pendrive_state_info.set("No pendrive detected")
-        self.pendrive_label = tk.Label(self, textvariable=self.pendrive_state_info, bg="red", fg="black")
+        self.pendrive_label = tk.Label(self, textvariable=self.pendrive_state_info, bg="red", fg="black")\
 
         self.save_location = tk.StringVar(self)
         # Początek programu
@@ -167,6 +167,15 @@ class SignatureApp(tk.Tk):
                 signed_pdf.write(pdf_bytes)
                 signed_pdf.write(b"\n%SIGNATURE=" + signature.hex().encode() + b"\n")
 
+            success_window = tk.Toplevel(self)
+            success_window.title("Successfully added signature to PDF")
+            success_window.geometry("300x100")
+            success_window.configure(bg="green")
+            success_label = tk.Label(success_window, text="Signature successfully added!", bg="green", font=("Arial", 14))
+            success_label.pack(pady=20)
+
+
+            success_window.after(2000, success_window.destroy)
             print("Podpis dodany do PDF")
 
     ## Method that generates the signature to the .pdf file
