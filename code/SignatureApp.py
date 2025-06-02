@@ -46,7 +46,7 @@ class SignatureApp(tk.Tk):
         self.pendrive_connected = False
         self.pendrive_state_info = tk.StringVar()
         self.pendrive_state_info.set("No pendrive detected")
-        self.pendrive_label = tk.Label(self, textvariable=self.pendrive_state_info, bg="red", fg="black")\
+        self.pendrive_label = tk.Label(self, textvariable=self.pendrive_state_info, bg="red", fg="black")
 
         self.save_location = tk.StringVar(self)
         # Początek programu
