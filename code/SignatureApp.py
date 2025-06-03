@@ -337,7 +337,10 @@ class SignatureApp(tk.Tk):
     # @throws FileNotFoundError if file is not found
     def read_private_key_from_file(self):
         usb_path = f.find_usb()
-        full_path = os.path.join(list(usb_path)[0], ds.file_name)
+        if(self.mode):
+            full_path = os.path.join(list(usb_path)[0], ds.file_name)
+        else:
+            full_path = os.path.join(list(usb_path)[0], ds.file_name_1)
         print(full_path)
 
         if not (os.path.exists(full_path) and os.path.exists(full_path)):
@@ -352,6 +355,7 @@ class SignatureApp(tk.Tk):
             end_marker = b"Public key: "
             start_marker_user_pin = b"User_pin: "
             start_marker_iv = b"iv: "
+            end_public_key = b"happy ending"
 
             if (self.mode):
                 # czytanie prywatnego klucza
@@ -374,7 +378,7 @@ class SignatureApp(tk.Tk):
                 if end_marker in content:
                     start_index = content.index(end_marker)  # Znajdź początek
                     content_after_marker = content[start_index + len(end_marker):]  # Po markerze
-                    end_index = content_after_marker.find(start_marker_user_pin)
+                    end_index = content_after_marker.find(end_public_key)
 
                     if end_index != -1:
                         read_key_public = content_after_marker[:end_index]  # Wyodrębniamy klucz prywatny
