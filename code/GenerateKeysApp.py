@@ -94,7 +94,8 @@ class GenerateKeysApp(tk.Tk):
 
         self.after(3000, lambda: self.progress.step(20))
         self.after(4000, lambda: self.status_label.config(text="Saving to file..."))
-        self.save_to_file()
+        self.save_to_file(1)
+        self.save_to_file(2)
 
         self.after(5000, lambda: self.progress.step(20))
         self.after(6000, self.on_generation_complete)
@@ -107,30 +108,37 @@ class GenerateKeysApp(tk.Tk):
 
 
     ## Method that save the generated keys and pin to the .txt file
+    # @param mode the choice between public and private key file
     # @throws Exception if method can not save the file
     # @return Null if the path is invalid
-    def save_to_file(self):
+    def save_to_file(self, mode):
         save_path = self.save_location.get()
 
         if not os.path.isdir(save_path): #is path valid
             print("Invalid path")
             return
-
-        file_path = os.path.join(save_path, ds.file_name)
+        if(mode == 1):
+            file_path = os.path.join(save_path, ds.file_name)
+        else:
+            file_path = os.path.join(save_path, ds.file_name_1)
 
         try:
             with open(file_path, "wb") as f:
-                f.write(b"Decrypted private key: ")
-                f.write(self.encrypted_private_key)  # bytes
-                print(self.encrypted_private_key)
+                if(mode == 1):
+                    f.write(b"Decrypted private key: ")
+                    f.write(self.encrypted_private_key)  # bytes
+                    print(self.encrypted_private_key)
                 f.write(b"Public key: ")
                 PEM_public_key = rsa.convert_PEM_public(self.public_key)
                 f.write(PEM_public_key)
                 print(PEM_public_key)
-                f.write(b"User_pin: ")
-                f.write(str(self.user_pin).encode())  # bytes - Zapiszemy PIN w formie bajtów
-                f.write(b"iv: ")
-                f.write(self.iv)  # bytes
+                if(mode == 2):
+                    f.write(b"happy ending")
+                if(mode == 1):
+                    f.write(b"User_pin: ")
+                    f.write(str(self.user_pin).encode())  # bytes - Zapiszemy PIN w formie bajtów
+                    f.write(b"iv: ")
+                    f.write(self.iv)  # bytes
             print(f"File saved at {file_path}")
 
         except Exception as e:

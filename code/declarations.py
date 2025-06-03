@@ -6,3 +6,4 @@
 
 # deklaracje zmiennych
 file_name = "topSecret.txt"
+file_name_1 = "public_key.txt"
